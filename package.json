@@ -2,7 +2,7 @@
   "name": "dobromir-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dobromirkralev.github.io.git",
+  "homepage": "https://github.com/dobromirkralev/dobromirkralev.github.io.git",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
