@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,12 +25,50 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
+      <meta
+        name='viewport'
+        content='width=device-width, initial-scale=1, maximum-scale=1'
+      ></meta>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Layout>{children}</Layout>
       </body>
     </html>
+  );
+}
+
+function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <div className='min-h-screen flex flex-col'>
+      <header className='bg-blue-900 text-white p-4 flex flex-col items-center'>
+        <h1 className='text-3xl font-bold'>Dobromir Kralev</h1>
+        <p className='text-xl'>Software Engineer</p>
+        <nav className='mt-4'>
+          <ul className='flex space-x-4'>
+            <li>
+              <Link href='/' className='text-white hover:underline'>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href='/about' className='text-white hover:underline'>
+                About
+              </Link>
+            </li>
+            {/* Add more links as needed */}
+          </ul>
+        </nav>
+      </header>
+      <main className='flex-grow p-4'>{children}</main>
+      <footer className='bg-blue-900 text-white p-4 text-center'>
+        <p>&copy; 2025 Dobromir Kralev</p>
+      </footer>
+    </div>
   );
 }

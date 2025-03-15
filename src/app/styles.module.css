@@ -1,0 +1,13 @@
+.resume-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  flex: 1;
+}
+
+.profile {
+  flex: 1;
+}
